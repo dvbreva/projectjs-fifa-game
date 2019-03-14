@@ -1,4 +1,3 @@
-
 var getInfoByGroups = () => {
 
     AjaxWrapper.get("http://worldcup.sfg.io/teams/group_results", (data) => {
@@ -76,5 +75,32 @@ var getInfoByMatches = () => {
 
         }
     });
+}
 
+var getInfoByTeams = () => {
+    
+    AjaxWrapper.get("http://worldcup.sfg.io/teams/", (data) => {
+        var teams = data;
+        var table = document.getElementById("teamsTable");
+
+        for (var i = 0; i < teams.length; i++) {
+            var tr = table.appendChild(document.createElement("tr"));
+
+            
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(teams[i].fifa_code));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(teams[i].country));
+
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(teams[i].group_id));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(teams[i].group_letter));
+           
+
+        }
+    });
 }
