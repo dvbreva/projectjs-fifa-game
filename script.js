@@ -28,3 +28,53 @@ var getInfoByGroups = () => {
 
     });
 };
+
+var getInfoByMatches = () => {
+
+    AjaxWrapper.get("http://worldcup.sfg.io/matches", (data) => {
+        var matches = data;
+        var table = document.getElementById("matchesTable");
+
+        for (var i = 0; i < matches.length; i++) {
+            var tr = table.appendChild(document.createElement("tr"));
+
+
+            var splittedDate = (matches[i].datetime).split("T",1);
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(splittedDate));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].away_team.code));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].home_team.code));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].away_team.country));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].home_team.country));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].location));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].venue));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].winner));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].status));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].home_team.goals));
+
+            var td = tr.appendChild(document.createElement("td"));
+            td.appendChild(document.createTextNode(matches[i].away_team.goals));
+
+        }
+    });
+
+}
