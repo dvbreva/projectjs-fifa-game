@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    
-       
+
+
     <a href="index.html">Index</a>
     <a href="groups.html">Groups</a>
     <a href="matches.html">Matches</a>
     <a href="teams.html">Teams</a>
-    
-        <div id="info">
-    
-            <button onclick="getInfoByMatches()">Click me</button>
-            <table id="matchesTable"> 
-                    <tr>
-                        <td>Date</td>
-                            <td>Away team code</td>
-                            <td>Home team code</td>
-                            <td>Away team country</td>
-                            <td>Home team country</td>
-                            <td>Location</td>
-                            <td>Venue</td>
-                            <td>Winner</td>
-                            <td>Status</td>
-                            <td>Home team goals</td>
-                            <td>Away team goals</td>
-                        </tr>
+    <a href="search.html">Search</a>
+    <a href="history.html">History</a>
 
-            </table>
-    
-        </div>
-        
-        <script src="AjaxWrapper.js"></script>
-        <script src="script.js"></script>
+    <br> <br>
+
+    <div id="info">
+
+        <button onclick="getInfoByMatches()">Show info</button>
+        <table id="matchesTable">
+            <tr>
+                <td>Date</td>
+                <td>Away team code</td>
+                <td>Home team code</td>
+                <td>Away team country</td>
+                <td>Home team country</td>
+                <td>Location</td>
+                <td>Venue</td>
+                <td>Winner</td>
+                <td>Status</td>
+                <td>Home team goals</td>
+                <td>Away team goals</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script src="AjaxWrapper.js"></script>
+    <script src="LocalStorage.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

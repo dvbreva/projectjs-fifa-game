@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>History</title>
 </head>
 <body>
 
@@ -15,22 +15,18 @@
         <a href="search.html">Search</a>
         <a href="history.html">History</a>
 
-        <br><br>
+<h2>History</h2>
 
-      
-        <form>
-        Country: <input type="text" id="countryInput" required><br>
-        Venue: <input type="text" id="venueInput" required><br>
-        <input type="radio" id="elevenRadioButton" value="startingEleven" name="radio"> Starting eleven<br>
-        <input type="radio" id="substituesRadioButton" value="substitutes" name="radio"> Substitutes<br>
-        <input type="submit" id="searchButton" required> 
-        </form>
+        <button onclick="printHistory()">Show the whole history</button>
+        <button onclick="LocalStorage.deleteHistoryItem('history')">Clear the whole history</button>
 
-        <div id="searchInfo">
-        </div>
+        <div id="history">
+                
+            </div>
 
         <script src="AjaxWrapper.js"></script>
         <script src="LocalStorage.js"></script>
         <script src="script.js"></script>
+    
 </body>
 </html>

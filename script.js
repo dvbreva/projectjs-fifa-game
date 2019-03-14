@@ -1,4 +1,18 @@
+var printHistory = () => {
+
+    LocalStorage.addHistoryItem("history", "Viewed history page");
+
+    var div = document.getElementById("history");
+    var historyArray = LocalStorage.printHistoryItem("history");
+    for (var i = 0; i < historyArray.length; i++) {
+        div.innerHTML += historyArray[i] + "<br>";
+    }
+};
+
+
 var getInfoByGroups = () => {
+
+    LocalStorage.addHistoryItem("history", "Viewed groups page");
 
     AjaxWrapper.get("http://worldcup.sfg.io/teams/group_results", (data) => {
 
@@ -29,6 +43,8 @@ var getInfoByGroups = () => {
 };
 
 var getInfoByMatches = () => {
+
+    LocalStorage.addHistoryItem("history", "Viewed matches page");
 
     AjaxWrapper.get("http://worldcup.sfg.io/matches", (data) => {
         var matches = data;
@@ -79,6 +95,8 @@ var getInfoByMatches = () => {
 
 var getInfoByTeams = () => {
 
+    LocalStorage.addHistoryItem("history", "Viewed teams page");
+
     AjaxWrapper.get("http://worldcup.sfg.io/teams/", (data) => {
         var teams = data;
         var table = document.getElementById("teamsTable");
@@ -106,6 +124,8 @@ var getInfoByTeams = () => {
 }
 
 var getInfoBySearching = (country, venue, players) => {
+
+    LocalStorage.addHistoryItem("history", "Viewed searching page");
 
     AjaxWrapper.get("http://worldcup.sfg.io/matches", (data) => {
         var matches = data;
@@ -174,6 +194,8 @@ var getInfoBySearching = (country, venue, players) => {
     });
 }
 
+
+
 var actionSubmitSearch = document.getElementById("searchButton");
 
 actionSubmitSearch.addEventListener("click", (e) => {
@@ -190,6 +212,5 @@ actionSubmitSearch.addEventListener("click", (e) => {
     }
 
     getInfoBySearching(country, venue, player);
-
 
 });
